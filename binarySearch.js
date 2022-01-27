@@ -25,3 +25,4 @@ function binarySearch(targetVale){
 };
 
 console.log( binarySearch(20) );
+console.log( binarySearch(2) );
