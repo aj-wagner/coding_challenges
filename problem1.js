@@ -3,7 +3,7 @@
 
 
 
-const searchArray = [10, 15, 3, 7];
+const searchArray = [10, 15, 6, 3, 7, 6];
 
 function findingPair(array, targetVale){
     if (array.length < 2) { return false; }
@@ -11,10 +11,12 @@ function findingPair(array, targetVale){
     
     for (let i=0; i < array.length; i++){
         valueOf = targetVale - array[i];
-        if (array.indexOf(valueOf) > -1) { return true; }
+        //not sure if this counts as 1 pass as indexOf is doing a loop
+        //inculded a check to ensure the same number isn't summed with itself
+        if (array.indexOf(valueOf) > -1 && array.indexOf(valueOf) != i) { return true; }
     }
 
     return false;
 };
 
-console.log( findingPair(searchArray, 4) );
+console.log( findingPair(searchArray, 12) );
